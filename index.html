@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,8 +8,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
 <!-- Firebase -->
+
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 
 <style>
@@ -525,12 +529,14 @@ body::before {
   .cd-box { flex:1; }
 }
 </style>
+
 </head>
 <body>
 
 <!-- ══════════════════════════════════════════════
      AUTH SCREEN
 ══════════════════════════════════════════════ -->
+
 <div id="authScreen">
   <div class="auth-eyebrow">🏆 ALAC Office Pool · FIFA World Cup 2026</div>
   <h1 class="auth-title">
@@ -569,6 +575,7 @@ body::before {
 <!-- ══════════════════════════════════════════════
      MAIN NAV
 ══════════════════════════════════════════════ -->
+
 <nav id="mainNav">
   <div class="nav-brand" onclick="showPage('dashboard')">⚽ <em>ALAC</em> CUP 2026</div>
   <div class="nav-tabs">
@@ -589,9 +596,11 @@ body::before {
 <!-- ══════════════════════════════════════════════
      APP PAGES
 ══════════════════════════════════════════════ -->
+
 <div id="appPages" style="display:none">
 
 <!-- ── DASHBOARD ── -->
+
 <div class="page active" id="page-dashboard">
   <div class="ph">
     <div class="ph-title">Dashboard <span>·</span> <span id="phPhase">Group Stage</span></div>
@@ -622,6 +631,7 @@ body::before {
   </div>
 
   <!-- Next game -->
+
   <div class="next-game-banner" id="nextGameBanner">
     <div>
       <div class="ngb-eyebrow" id="ngbGroup">⚡ Next Game</div>
@@ -682,6 +692,7 @@ body::before {
 </div>
 
 <!-- ── FIXTURES ── -->
+
 <div class="page" id="page-fixtures">
   <div class="ph">
     <div class="ph-title">Fixtures</div>
@@ -707,6 +718,7 @@ body::before {
 </div>
 
 <!-- ── WILDCARDS ── -->
+
 <div class="page" id="page-wildcards">
   <div class="ph">
     <div class="ph-title">Wildcards</div>
@@ -730,6 +742,7 @@ body::before {
 </div>
 
 <!-- ── STANDINGS ── -->
+
 <div class="page" id="page-standings">
   <div class="ph">
     <div class="ph-title">Group Standings</div>
@@ -741,6 +754,7 @@ body::before {
 </div>
 
 <!-- ── RULES ── -->
+
 <div class="page" id="page-rules">
   <div class="ph">
     <div class="ph-title">Rules & <span>Scoring</span></div>
@@ -806,6 +820,7 @@ body::before {
 </div>
 
 <!-- ── ADMIN ── -->
+
 <div class="page" id="page-admin">
   <div class="ph">
     <div class="ph-title">Admin <span>Panel</span></div>
@@ -813,6 +828,7 @@ body::before {
   </div>
 
   <!-- Prize banner -->
+
   <div class="prize-banner" id="prizeBanner">
     <div>
       <div class="pb-label">💰 Total Prize Pool</div>
@@ -848,67 +864,95 @@ body::before {
       </div>
     </div>
 
-    <!-- API Status -->
-    <div class="card">
-      <div class="card-header"><div class="card-title">API-Football Setup</div></div>
-      <div style="padding:1.1rem">
-        <div class="rules-note" style="margin-bottom:1rem">
-          Sign up free at <strong>api-football.com</strong> → get your API key → paste below. Free tier: 100 req/day, enough for this pool.
-        </div>
-        <div class="fgroup">
-          <label>API-Football Key</label>
-          <input class="finput" type="password" id="apiKeyInput" placeholder="Paste your key here">
-        </div>
-        <button class="btn btn-gold btn-sm" onclick="saveApiKey()">SAVE &amp; TEST KEY</button>
-        <div id="apiTestResult" style="font-size:0.8rem;margin-top:0.6rem;color:var(--text2)"></div>
-        <div class="divider"></div>
-        <button class="btn btn-outline btn-sm" onclick="syncFixtures()">🔄 Sync Fixtures Now</button>
-        <button class="btn btn-outline btn-sm" style="margin-top:0.4rem" onclick="syncStandings()">🔄 Sync Standings Now</button>
-        <div id="syncStatus" style="font-size:0.78rem;margin-top:0.6rem;color:var(--text3)"></div>
-      </div>
+```
+<!-- API Status -->
+<div class="card">
+  <div class="card-header"><div class="card-title">API-Football Setup</div></div>
+  <div style="padding:1.1rem">
+    <div class="rules-note" style="margin-bottom:1rem">
+      Sign up free at <strong>api-football.com</strong> → get your API key → paste below. Free tier: 100 req/day, enough for this pool.
     </div>
+    <div class="fgroup">
+      <label>API-Football Key</label>
+      <input class="finput" type="password" id="apiKeyInput" placeholder="Paste your key here">
+    </div>
+    <button class="btn btn-gold btn-sm" onclick="saveApiKey()">SAVE &amp; TEST KEY</button>
+    <div id="apiTestResult" style="font-size:0.8rem;margin-top:0.6rem;color:var(--text2)"></div>
+    <div class="divider"></div>
+    <button class="btn btn-outline btn-sm" onclick="syncFixtures()">🔄 Sync Fixtures Now</button>
+    <button class="btn btn-outline btn-sm" style="margin-top:0.4rem" onclick="syncStandings()">🔄 Sync Standings Now</button>
+    <div id="syncStatus" style="font-size:0.78rem;margin-top:0.6rem;color:var(--text3)"></div>
+  </div>
+</div>
 
-    <!-- Post wildcard -->
-    <div class="card" style="grid-column:1/-1">
-      <div class="card-header"><div class="card-title">Manage Wildcard Questions</div></div>
-      <div style="padding:1.1rem">
-        <!-- Existing WCs -->
-        <div class="section-label" style="margin-bottom:0.5rem">Current Questions</div>
-        <div id="adminWcList" style="margin-bottom:1rem">
-          <div class="empty-state" style="padding:1rem">No wildcards posted yet</div>
-        </div>
-        <div class="divider"></div>
-        <div class="section-label" style="margin-bottom:0.5rem">Add New Question</div>
-        <div style="display:grid;grid-template-columns:1fr auto;gap:0.75rem;align-items:end;margin-bottom:0.75rem">
-          <div class="fgroup" style="margin:0">
-            <label>Question</label>
-            <input class="finput" type="text" id="wcQInput" placeholder="e.g. How many iPads sold in Chile on June 11?">
-          </div>
-          <div class="fgroup" style="margin:0">
-            <label>Category</label>
-            <select class="finput" id="wcCatInput">
-              <option value="apple">🍎 Apple / Office</option>
-              <option value="extra">➕ Extra Tournament</option>
-              <option value="podium">🏆 Podium</option>
-            </select>
-          </div>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:0.75rem;align-items:end">
-          <div class="fgroup" style="margin:0">
-            <label>Answer Type</label>
-            <select class="finput" id="wcTypeInput">
-              <option value="text">Free text</option>
-              <option value="number">Number (closest wins)</option>
-            </select>
-          </div>
-          <div class="fgroup" style="margin:0">
-            <label>Lock Deadline</label>
-            <input class="finput" type="datetime-local" id="wcDeadlineInput" style="color-scheme:dark">
-          </div>
-          <button class="btn btn-gold btn-sm" onclick="postWildcard()">POST →</button>
-        </div>
+<!-- Post wildcard -->
+<div class="card" style="grid-column:1/-1">
+  <div class="card-header"><div class="card-title">Manage Wildcard Questions</div></div>
+  <div style="padding:1.1rem">
+    <!-- Existing WCs -->
+    <div class="section-label" style="margin-bottom:0.5rem">Current Questions</div>
+    <div id="adminWcList" style="margin-bottom:1rem">
+      <div class="empty-state" style="padding:1rem">No wildcards posted yet</div>
+    </div>
+    <div class="divider"></div>
+    <div class="section-label" style="margin-bottom:0.5rem">Add New Question</div>
+    <div style="display:grid;grid-template-columns:1fr auto;gap:0.75rem;align-items:end;margin-bottom:0.75rem">
+      <div class="fgroup" style="margin:0">
+        <label>Question</label>
+        <input class="finput" type="text" id="wcQInput" placeholder="e.g. How many iPads sold in Chile on June 11?">
+      </div>
+      <div class="fgroup" style="margin:0">
+        <label>Category</label>
+        <select class="finput" id="wcCatInput">
+          <option value="apple">🍎 Apple / Office</option>
+          <option value="extra">➕ Extra Tournament</option>
+          <option value="podium">🏆 Podium</option>
+        </select>
       </div>
     </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:0.75rem;align-items:end">
+      <div class="fgroup" style="margin:0">
+        <label>Answer Type</label>
+        <select class="finput" id="wcTypeInput">
+          <option value="text">Free text</option>
+          <option value="number">Number (closest wins)</option>
+        </select>
+      </div>
+      <div class="fgroup" style="margin:0">
+        <label>Lock Deadline</label>
+        <input class="finput" type="datetime-local" id="wcDeadlineInput" style="color-scheme:dark">
+      </div>
+      <button class="btn btn-gold btn-sm" onclick="postWildcard()">POST →</button>
+    </div>
+  </div>
+</div>
+
+<!-- Manual score entry -->
+<div class="card" style="grid-column:1/-1">
+  <div class="card-header"><div class="card-title">Enter Match Results Manually</div><span style="font-size:0.78rem;color:var(--text3)">Use this when API sync returns 0 fixtures</span></div>
+  <div style="padding:1.1rem">
+    <div class="rules-note" style="margin-bottom:1rem">Select a match, enter the final score (90 min + stoppage only), click Save. Points auto-calculate for all players instantly.</div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:0.75rem;align-items:end">
+      <div class="fgroup" style="margin:0">
+        <label>Match</label>
+        <select class="finput" id="manualFixtureSelect">
+          <option value="">Select a match...</option>
+        </select>
+      </div>
+      <div class="fgroup" style="margin:0">
+        <label>Home Score</label>
+        <input class="finput" type="number" id="manualScore1" min="0" max="20" placeholder="0">
+      </div>
+      <div class="fgroup" style="margin:0">
+        <label>Away Score</label>
+        <input class="finput" type="number" id="manualScore2" min="0" max="20" placeholder="0">
+      </div>
+      <button class="btn btn-gold btn-sm" onclick="saveManualScore()">SAVE & CALC →</button>
+    </div>
+  </div>
+</div>
+```
+
   </div>
 </div>
 
@@ -919,6 +963,7 @@ body::before {
 ══════════════════════════════════════════════ -->
 
 <!-- Predict Modal -->
+
 <div class="overlay" id="predictOverlay">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('predictOverlay')">×</button>
@@ -951,6 +996,7 @@ body::before {
 </div>
 
 <!-- Wildcard Modal -->
+
 <div class="overlay" id="wcOverlay">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('wcOverlay')">×</button>
@@ -966,6 +1012,7 @@ body::before {
 </div>
 
 <!-- MOBILE BOTTOM NAV -->
+
 <div id="mobileNav" style="display:none">
   <div class="mob-nav-inner">
     <button class="mob-tab active" onclick="showPage('dashboard');setMobTab(this)">
@@ -1012,7 +1059,7 @@ let ENTRY_FEE = 20;
 // API-Football
 let API_FOOTBALL_KEY = "";
 const API_BASE = "https://v3.football.api-sports.io";
-const WC_2026_ID = 1; // FIFA World Cup 2026 — league=1, season=2026 on API-Football
+const WC_2026_ID = 2; // TEMP: UEFA Champions League for testing — change back to 1 for World Cup
 
 // ════════════════════════════════════════════
 // INIT
@@ -1065,9 +1112,20 @@ async function loadUserDoc() {
 // AUTH
 // ════════════════════════════════════════════
 function authTab(tab) {
-  document.querySelectorAll('.auth-switch-btn').forEach((b,i) => b.classList.toggle('active', (tab==='join'&&i===0)||(tab==='login'&&i===1)));
-  document.getElementById('auth-join').style.display = tab==='join'?'block':'none';
-  document.getElementById('auth-login').style.display = tab==='login'?'block':'none';
+  const joinDiv = document.getElementById('auth-join');
+  const loginDiv = document.getElementById('auth-login');
+  const btns = document.querySelectorAll('.auth-switch-btn');
+  if (tab === 'login') {
+    joinDiv.style.display = 'none';
+    loginDiv.style.display = 'block';
+    btns[0].classList.remove('active');
+    btns[1].classList.add('active');
+  } else {
+    joinDiv.style.display = 'block';
+    loginDiv.style.display = 'none';
+    btns[0].classList.add('active');
+    btns[1].classList.remove('active');
+  }
 }
 
 function checkJoinCode() {
@@ -1269,10 +1327,29 @@ const DEMO_FIXTURES = [
 
 async function loadFixtures() {
   // Try Firestore first (admin synced)
-  const snap = await db.collection("fixtures").orderBy("kickoff").get();
-  if (!snap.empty) {
-    allFixtures = snap.docs.map(d => ({ id: d.id, ...d.data(), kickoff: d.data().kickoff?.toDate() || new Date(d.data().kickoffMs) }));
-  } else {
+  try {
+    const snap = await db.collection("fixtures").get();
+    if (!snap.empty) {
+      allFixtures = snap.docs.map(d => {
+        const data = d.data();
+        // Handle both timestamp field and kickoffMs number field
+        let kickoff;
+        if (data.kickoff && typeof data.kickoff.toDate === 'function') {
+          kickoff = data.kickoff.toDate(); // Firestore timestamp
+        } else if (data.kickoffMs) {
+          kickoff = new Date(data.kickoffMs); // milliseconds number
+        } else {
+          kickoff = new Date(); // fallback
+        }
+        return { id: d.id, ...data, kickoff };
+      });
+      // Sort by kickoff time
+      allFixtures.sort((a, b) => a.kickoff - b.kickoff);
+    } else {
+      allFixtures = DEMO_FIXTURES;
+    }
+  } catch(e) {
+    console.error('Error loading fixtures:', e);
     allFixtures = DEMO_FIXTURES;
   }
   renderFixtures();
@@ -1441,11 +1518,14 @@ async function submitPrediction() {
     submittedAt: firebase.firestore.FieldValue.serverTimestamp()
   };
   const predId = `${currentUser.uid}_${f.id}`;
+  const isNew = !userPredictions[f.id]; // check if this is a new prediction or an edit
   await db.collection("predictions").doc(predId).set(data);
   userPredictions[f.id] = data;
 
-  // Update pred count
-  await db.collection("users").doc(currentUser.uid).update({ predCount: firebase.firestore.FieldValue.increment(1) });
+  // Only increment predCount for new predictions, not edits
+  if (isNew) {
+    await db.collection("users").doc(currentUser.uid).update({ predCount: firebase.firestore.FieldValue.increment(1) });
+  }
 
   closeModal('predictOverlay');
   toast(`✅ Locked: ${f.team1} ${scoreValues[0]} – ${scoreValues[1]} ${f.team2}`);
@@ -1456,13 +1536,16 @@ async function submitPrediction() {
 // SCORING ENGINE
 // ════════════════════════════════════════════
 function calcPoints(pred, fixture, phase) {
-  if (fixture.score1 === null || fixture.score2 === null) return 0;
+  if (fixture.score1 === null || fixture.score2 === null || fixture.score1 === undefined || fixture.score2 === undefined) return 0;
   const pts = PHASE_POINTS[phase] || PHASE_POINTS['Group Stage'];
-  const predOutcome = pred.s1 > pred.s2 ? 1 : pred.s1 < pred.s2 ? -1 : 0;
-  const realOutcome = fixture.score1 > fixture.score2 ? 1 : fixture.score1 < fixture.score2 ? -1 : 0;
+  // Always compare as numbers to avoid string/number mismatch from Firestore
+  const ps1 = Number(pred.s1); const ps2 = Number(pred.s2);
+  const rs1 = Number(fixture.score1); const rs2 = Number(fixture.score2);
+  const predOutcome = ps1 > ps2 ? 1 : ps1 < ps2 ? -1 : 0;
+  const realOutcome = rs1 > rs2 ? 1 : rs1 < rs2 ? -1 : 0;
   if (predOutcome !== realOutcome) return 0;
   let total = pts.winner;
-  if (pred.s1 === fixture.score1 && pred.s2 === fixture.score2) total += pts.exact;
+  if (ps1 === rs1 && ps2 === rs2) total += pts.exact;
   return total;
 }
 
@@ -1591,12 +1674,21 @@ function renderAdminWcList(adminWcs) {
   const el = document.getElementById('adminWcList');
   if (!el) return;
   if (adminWcs.length === 0) { el.innerHTML = '<div class="empty-state" style="padding:1rem">No custom wildcards yet</div>'; return; }
-  el.innerHTML = adminWcs.map(wc => `<div class="wc-admin-row">
-    <div class="wc-admin-q">${wc.q}</div>
-    <div class="wc-admin-lock">Locks: ${new Date(wc.deadline).toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'})}</div>
-    <span class="badge ${wc.cat==='apple'?'bg-gold':wc.cat==='extra'?'bg-blue':'bg-green'}">${wc.cat}</span>
-    <button class="btn btn-outline btn-sm" style="font-size:0.72rem;padding:0.3rem 0.65rem" onclick="deleteWc('${wc.id}')">✕</button>
-  </div>`).join('');
+  el.innerHTML = adminWcs.map(wc => {
+    const isLocked = wc.deadline && new Date() > new Date(wc.deadline);
+    return `<div class="wc-admin-row" style="flex-wrap:wrap;gap:0.5rem">
+      <div class="wc-admin-q" style="flex:1;min-width:200px">${wc.q}</div>
+      <div class="wc-admin-lock">${isLocked ? '🔒 Locked' : 'Locks: ' + new Date(wc.deadline).toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'})}</div>
+      <span class="badge ${wc.cat==='apple'?'bg-gold':wc.cat==='extra'?'bg-blue':'bg-green'}">${wc.cat}</span>
+      ${wc.correctAnswer ? `<span class="badge bg-green">✓ Answer set: ${wc.correctAnswer}</span>` :
+        isLocked ? `<div style="display:flex;gap:0.4rem;align-items:center">
+          <input class="finput" type="text" id="wca_${wc.id}" placeholder="Enter correct answer" style="padding:0.3rem 0.6rem;font-size:0.8rem;max-width:180px">
+          <button class="btn btn-gold btn-sm" style="padding:0.3rem 0.75rem;font-size:0.75rem" onclick="saveWildcardAnswer('${wc.id}','${wc.cat}')">SET & SCORE</button>
+        </div>` : '<span style="font-size:0.74rem;color:var(--text3)">Available after lock</span>'
+      }
+      <button class="btn btn-outline btn-sm" style="font-size:0.72rem;padding:0.3rem 0.65rem" onclick="deleteWc('${wc.id}')">✕</button>
+    </div>`;
+  }).join('');
 }
 
 function openWcModal(id, q, type) {
@@ -1677,6 +1769,19 @@ async function loadAdminData() {
     document.getElementById('a-p2').textContent = '$' + Math.round(pool*0.2);
     document.getElementById('a-p3').textContent = '$' + Math.round(pool*0.1);
   });
+  // Populate manual score dropdown
+  populateFixtureDropdown();
+}
+
+function populateFixtureDropdown() {
+  const sel = document.getElementById('manualFixtureSelect');
+  if (!sel) return;
+  const options = allFixtures
+    .filter(f => f.score1 === null || f.score1 === undefined)
+    .sort((a,b) => a.kickoff - b.kickoff)
+    .map(f => `<option value="${f.id}">${f.flag1} ${f.team1} vs ${f.flag2} ${f.team2} · ${f.phase}${f.group?' Grp '+f.group:''}</option>`)
+    .join('');
+  sel.innerHTML = '<option value="">Select a match...</option>' + options;
 }
 
 function renderAdminPlayers(users) {
@@ -1733,7 +1838,7 @@ async function syncFixtures() {
   if (!API_FOOTBALL_KEY) { toast('❌ Set your API key first'); return; }
   document.getElementById('syncStatus').textContent = '🔄 Syncing fixtures...';
   try {
-    const res = await fetch(`${API_BASE}/fixtures?league=${WC_2026_ID}&season=2026`, { headers: { 'x-apisports-key': API_FOOTBALL_KEY } });
+    const res = await fetch(`${API_BASE}/fixtures?league=${WC_2026_ID}&season=2025`, { headers: { 'x-apisports-key': API_FOOTBALL_KEY } });
     const data = await res.json();
     const fixtures = data.response || [];
 
@@ -1849,7 +1954,7 @@ async function syncStandings() {
   if (!API_FOOTBALL_KEY) { toast('❌ Set your API key first'); return; }
   document.getElementById('syncStatus').textContent = '🔄 Syncing standings...';
   try {
-    const res = await fetch(`${API_BASE}/standings?league=${WC_2026_ID}&season=2026`, { headers: { 'x-apisports-key': API_FOOTBALL_KEY } });
+    const res = await fetch(`${API_BASE}/standings?league=${WC_2026_ID}&season=2025`, { headers: { 'x-apisports-key': API_FOOTBALL_KEY } });
     const data = await res.json();
     const groups = data.response?.[0]?.league?.standings || [];
     const batch = db.batch();
@@ -1879,7 +1984,103 @@ async function postWildcard() {
   loadWildcards();
 }
 
-async function deleteWc(id) {
+async function saveWildcardAnswer(wcId, cat) {
+  const answer = document.getElementById(`wca_${wcId}`)?.value.trim();
+  if (!answer) { toast('❌ Please enter the correct answer'); return; }
+
+  // Save correct answer to wildcard doc
+  await db.collection("wildcards").doc(wcId).update({ correctAnswer: answer });
+
+  // Get all user answers for this wildcard
+  const ansSnap = await db.collection("wildcard_answers").where("wcId","==",wcId).get();
+  const isPodium = cat === 'podium';
+
+  if (isPodium) {
+    // Podium scoring: need all 4 correct — handled separately via checkPodiumScoring
+    await checkPodiumScoring();
+  } else {
+    // Regular wildcard: 10pts per correct answer
+    const batch = db.batch();
+    for (const doc of ansSnap.docs) {
+      const data = doc.data();
+      const userAnswer = data.answer?.toString().toLowerCase().trim();
+      const correctAnswer = answer.toLowerCase().trim();
+      if (userAnswer === correctAnswer) {
+        const userRef = db.collection("users").doc(data.uid);
+        batch.update(userRef, { points: firebase.firestore.FieldValue.increment(10) });
+        // Mark answer as correct
+        batch.update(doc.ref, { scored: true, pointsAwarded: 10 });
+      }
+    }
+    await batch.commit();
+  }
+
+  toast('✅ Correct answer saved — points awarded!');
+  loadWildcards();
+}
+
+async function checkPodiumScoring() {
+  // Get all 4 podium wildcard correct answers
+  const wcSnap = await db.collection("wildcards").where("cat","==","podium").get();
+  const podiumAnswers = {};
+  wcSnap.docs.forEach(d => {
+    const data = d.data();
+    if (data.correctAnswer) podiumAnswers[d.id] = data.correctAnswer.toLowerCase().trim();
+  });
+
+  // Only score if all 4 podium answers are set
+  if (Object.keys(podiumAnswers).length < 4) {
+    toast('ℹ️ Set all 4 podium answers to trigger scoring');
+    return;
+  }
+
+  // Get all users' podium answers
+  const ansSnap = await db.collection("wildcard_answers").where("wcId","in",Object.keys(podiumAnswers)).get();
+  const userAnswers = {};
+  ansSnap.docs.forEach(d => {
+    const data = d.data();
+    if (!userAnswers[data.uid]) userAnswers[data.uid] = {};
+    userAnswers[data.uid][data.wcId] = data.answer?.toLowerCase().trim();
+  });
+
+  // Award 20pts to users who got all 4 correct
+  const batch = db.batch();
+  for (const [uid, answers] of Object.entries(userAnswers)) {
+    const allCorrect = Object.entries(podiumAnswers).every(([wcId, correct]) => answers[wcId] === correct);
+    if (allCorrect) {
+      batch.update(db.collection("users").doc(uid), { points: firebase.firestore.FieldValue.increment(20) });
+    }
+  }
+  await batch.commit();
+  toast('🏆 Podium scoring complete — 20pts awarded to correct entries!');
+}
+
+async function saveManualScore() {
+  const fixtureId = document.getElementById('manualFixtureSelect').value;
+  const score1 = parseInt(document.getElementById('manualScore1').value);
+  const score2 = parseInt(document.getElementById('manualScore2').value);
+
+  if (!fixtureId) { toast('❌ Please select a match'); return; }
+  if (isNaN(score1) || isNaN(score2)) { toast('❌ Please enter both scores'); return; }
+
+  // Save score to Firestore
+  await db.collection("fixtures").doc(fixtureId).update({ score1, score2 });
+
+  // Update local allFixtures array
+  const f = allFixtures.find(x => x.id === fixtureId);
+  if (f) { f.score1 = score1; f.score2 = score2; }
+
+  toast('⚽ Score saved — calculating points...');
+
+  // Recalculate all points
+  await recalculateAllPoints();
+  renderFixtures();
+
+  // Reset form
+  document.getElementById('manualFixtureSelect').value = '';
+  document.getElementById('manualScore1').value = '';
+  document.getElementById('manualScore2').value = '';
+}
   if (!confirm('Delete this wildcard?')) return;
   await db.collection("wildcards").doc(id).delete();
   toast('🗑️ Wildcard deleted');
@@ -1910,5 +2111,6 @@ function toast(msg) {
   setTimeout(() => el.remove(), 3000);
 }
 </script>
+
 </body>
 </html>
